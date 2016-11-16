@@ -1,0 +1,46 @@
+{
+  "name": "side-effect",
+  "version": "0.0.0",
+  "description": "Create Vue components whose nested prop changes map to a global side effect",
+  "license": "MIT",
+  "repository": "egoist/side-effect",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "jest && eslint src/*.js",
+    "dev": "vbuild example/ -d",
+    "build": "bili --format cjs --format umd --compress --module-name withSideEffect",
+    "build:example": "vbuild example/ --dist dist-example -t 'Side Effect'",
+    "surge": "npm run build:example && surge -p dist-example -d side-effect.surge.sh"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/side-effect.common.js",
+  "keywords": [
+    "side-effect",
+    "vue"
+  ],
+  "devDependencies": {
+    "babel-jest": "^17.0.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-vue": "^0.1.0",
+    "bili": "^0.7.0",
+    "eslint": "latest",
+    "eslint-config-egoist": "latest",
+    "jest-cli": "^15.1.1",
+    "vue": "^2.0.6"
+  },
+  "eslintConfig": {
+    "extends": "egoist/esnext",
+    "rules": {
+      "func-names": ["error", "as-needed"]
+    }
+  }
+}
