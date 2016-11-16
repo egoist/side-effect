@@ -1,6 +1,6 @@
 {
   "name": "side-effect",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create Vue components whose nested prop changes map to a global side effect",
   "license": "MIT",
   "repository": "egoist/side-effect",
@@ -40,7 +40,10 @@
   "eslintConfig": {
     "extends": "egoist/esnext",
     "rules": {
-      "func-names": ["error", "as-needed"]
+      "func-names": [
+        "error",
+        "as-needed"
+      ]
     }
   }
 }
