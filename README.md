@@ -25,7 +25,7 @@ It gathers current props across the whole tree before passing them to side effec
 </side-effect>
 
 <!-- some-component -->
-<body-style :set-style="{backgroundColor: 'red'}">
+<body-style :set-style="{backgroundColor: 'yellow'}">
   <input @input="updateColor" />
 </side-effect>
 ```
