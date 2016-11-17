@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest && eslint src/*.js",
-    "dev": "vbuild example/ -d",
+    "dev": "vbuild example/ -d --dist dist-example",
     "build": "bili --format cjs --format umd --compress --module-name withSideEffect",
     "build:example": "vbuild example/ --dist dist-example -t 'Side Effect'",
     "surge": "npm run build:example && surge -p dist-example -d side-effect.surge.sh"
