@@ -4,7 +4,7 @@ Heavily inspired by [react-side-effect](https://github.com/gaearon/react-side-ef
 
 ## Features
 
-- Light-weight: 1.5KB
+- Light-weight: 500 bytes gzipped
 - Simple: Just a component
 - Works just as well with isomorphic apps
 
