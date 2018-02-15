@@ -1,6 +1,6 @@
 {
   "name": "side-effect",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Create Vue components whose nested prop changes map to a global side effect",
   "license": "MIT",
   "repository": "egoist/side-effect",
