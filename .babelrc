@@ -1,7 +1,5 @@
 {
-  "env": {
-    "test": {
-      "presets": ["es2015", "vue"]
-    }
-  }
+  "presets": [
+    "poi"
+  ]
 }

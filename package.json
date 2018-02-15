@@ -13,8 +13,8 @@
     "test": "jest && eslint src/*.js",
     "dev": "poi example/ --dist dist/example",
     "build": "bili --format cjs,umd,umd-min --module-name withSideEffect",
-    "build:example": "poi example/ --dist dist/example",
-    "surge": "npm run build:example && surge -p dist-example -d side-effect.surge.sh",
+    "build:example": "poi build example/ --dist example/dist",
+    "surge": "npm run build:example && surge -p example/dist -d side-effect.surge.sh",
     "prepublishOnly": "npm run build"
   },
   "files": [
