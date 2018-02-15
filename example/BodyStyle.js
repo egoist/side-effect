@@ -1,6 +1,6 @@
 import withSideEffect from '../src'
 
-function reducePropsToState(props) {
+function reduceInstancesToState(props) {
   const style = {}
   for (const prop of props) {
     Object.assign(style, prop.setStyle)
@@ -15,7 +15,7 @@ function handleStateChangeOnClient(style) {
 }
 
 export default withSideEffect(
-  reducePropsToState,
+  reduceInstancesToState,
   handleStateChangeOnClient
 )({
   name: 'body-style',

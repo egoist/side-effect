@@ -9,20 +9,21 @@
     "email": "0x142857@gmail.com",
     "url": "github.com/egoist"
   },
-  "engines": {
-    "node": ">=4"
-  },
   "scripts": {
     "test": "jest && eslint src/*.js",
-    "dev": "vbuild example/ -d --dist dist-example",
-    "build": "bili --format cjs --format umd --compress --module-name withSideEffect",
-    "build:example": "vbuild example/ --dist dist-example -t 'Side Effect'",
-    "surge": "npm run build:example && surge -p dist-example -d side-effect.surge.sh"
+    "dev": "poi example/ --dist dist/example",
+    "build": "bili --format cjs,umd,umd-min --module-name withSideEffect",
+    "build:example": "poi example/ --dist dist/example",
+    "surge": "npm run build:example && surge -p dist-example -d side-effect.surge.sh",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"
   ],
-  "main": "dist/side-effect.common.js",
+  "main": "dist/side-effect.cjs.js",
+  "cdn": "dist/side-effect.js",
+  "unpkg": "dist/side-effect.js",
+  "jsdelivr": "dist/side-effect.js",
   "keywords": [
     "side-effect",
     "vue"
@@ -31,11 +32,12 @@
     "babel-jest": "^17.0.2",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-vue": "^0.1.0",
-    "bili": "^0.7.0",
+    "bili": "^2.2.7",
     "eslint": "latest",
     "eslint-config-egoist": "latest",
     "jest-cli": "^15.1.1",
-    "vue": "^2.0.6"
+    "poi": "^9.6.13",
+    "vue": "^2.5.13"
   },
   "eslintConfig": {
     "extends": "egoist/esnext",

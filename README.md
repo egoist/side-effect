@@ -43,10 +43,10 @@ const BodyStyle = {
   }
 }
 
-function reducePropsToState(props) {
+function reduceInstancesToState(vms) {
   const style = {}
-  for (const prop of props) {
-    Object.assign(style, prop.setStyle)
+  for (const vm of vms) {
+    Object.assign(style, vm.setStyle)
   }
   return style
 }
@@ -59,7 +59,7 @@ function handleStateChangeOnClient(style) {
 }
 
 export default withSideEffect(
-  reducePropsToState,
+  reduceInstancesToState,
   handleStateChangeOnClient
 )(BodyStyle)
 ```
@@ -72,7 +72,7 @@ The API is exactly the same as [react-side-effect](https://github.com/gaearon/re
 
 ```js
 withSideEffect(
-  reducePropsToState,
+  reduceInstancesToState,
   handleStateChangeOnClient,
   mapStateOnServer
 )(VueComponent)
